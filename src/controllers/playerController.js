@@ -12,9 +12,13 @@ const get_All = async (req, res) => {
 };
 
 const insert_Player = async (req, res) => {
-  const player = new Player(req.body);
-  player
-    .save()
+  const player = req.body;
+
+  const playerInDatabase = await Player.findOneAndUpdate(
+    { id: player.id },
+    player,
+    { upsert: true, new: true }
+  )
     .then((result) => {
       res.json(result);
     })

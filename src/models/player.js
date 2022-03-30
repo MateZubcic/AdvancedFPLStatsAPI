@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const playerSchema = new Schema(
   {
     id: {
-      type: 'Date',
+      type: 'String',
     },
     player_name: {
       type: 'String',
@@ -13,7 +13,7 @@ const playerSchema = new Schema(
       type: 'String',
     },
     time: {
-      type: 'Date',
+      type: 'String',
     },
     goals: {
       type: 'String',
